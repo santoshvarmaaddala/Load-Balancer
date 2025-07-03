@@ -3,7 +3,7 @@ from typing_extensions import Self
 from .server import Server
 
 class ServerManager:
-    instance = None
+    _instance = None
     _initialized = False  # new flag to avoid re-init
 
     def __new__(cls):

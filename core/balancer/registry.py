@@ -9,7 +9,7 @@ class StrategyRegistry:
         cls._strategies[name.lower()] = strategy_cls
 
     @classmethod
-    def get(cls, name=str) -> LoadBalancerStrategy:
+    def get(cls, name: str) -> LoadBalancerStrategy:
         strategy_cls = cls._strategies.get(name.lower())
 
         if not strategy_cls:

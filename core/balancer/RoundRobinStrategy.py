@@ -1,6 +1,6 @@
-from strategy import LoadBalancerStrategy
+from .strategy import LoadBalancerStrategy
 from typing import List
-from registry import StrategyRegistry
+from .registry import StrategyRegistry
 
 class RoundRobinStrategy(LoadBalancerStrategy):
 
@@ -11,7 +11,7 @@ class RoundRobinStrategy(LoadBalancerStrategy):
         if not servers:
             raise Exception("No available servers")
         
-        server = servers[self.index % len[servers]]
+        server = servers[self.index % len(servers)]
         self.index += 1
         return server
     
